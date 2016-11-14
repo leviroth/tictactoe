@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="tictactoe.js"></script>
+    <script>
+     $('document').ready(function () {
+       window.game = new Game();
+       for (var i = 0; i < 3; i++) {
+         for (var j = 0; j < 3; j++) {
+           $("#" + i + j).click(function (e) {
+             var x = e.target.id[0];
+             var y = e.target.id[1];
+             var result = window.game.play(x, y);
+             if (result) {
+               e.target.innerHTML = result + " ";
+             }
+           });
+         }
+       };
+     });
+    </script>
+    <style>
+     span {font-size: 24pt;
+         font-family: monospace;}
+    </style>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <div>
+      <span id="00" >_ </span>
+      <span id="01" >_ </span>
+      <span id="02" >_ </span>
+    </div>
+    <div>
+      <span id="10" >_ </span>
+      <span id="11" >_ </span>
+      <span id="12" >_ </span>
+    </div>
+    <div>
+      <span id="20" >_ </span>
+      <span id="21" >_ </span>
+      <span id="22" >_ </span>
+    </div>
+    <div id="message" ></div>
+  </body>
+</html>
