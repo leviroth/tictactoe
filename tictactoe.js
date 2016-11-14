@@ -45,7 +45,7 @@ const Game = function Game() {
   this.possibleWin = function possibleWin(startRow, startCol, stepRow, stepCol) {
     let row = startRow;
     let col = startCol;
-    let squares = [];
+    const squares = [];
     for (let i = 0; i < this.GAMESIZE; i++) {
       squares.push(this.board[row][col]);
       row += stepRow;
